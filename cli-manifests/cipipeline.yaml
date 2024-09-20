@@ -7,7 +7,7 @@ pipeline:
   properties:
     ci:
       codebase:
-        connectorRef: githubconnector
+        connectorRef: devdays-gh-connector
         build: <+input>
   stages:
     - stage:
@@ -46,7 +46,7 @@ pipeline:
                   name: BuildAndPushDockerRegistry
                   identifier: BuildAndPushDockerRegistry
                   spec:
-                    connectorRef: docker_connector
+                    connectorRef: docker-devdays-connector
                     repo: <+pipeline.variables.imageRepo>
                     tags:
                       - <+pipeline.variables.imageTag>
